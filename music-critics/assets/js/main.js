@@ -11,6 +11,11 @@ function loadPage() {
   $.get('./' + hash + '.html', function(result){
     $(".jqm-content").html(result);
     document.title = $( "h1" ).html();
+    
+    var w = $(".jqm-content").width();
+    var h = w * 2 / 3;
+    $('video').attr({"width":w, "height":h});
+    $('iframe').attr({"width":w, "height":h});
   });
 }
 
